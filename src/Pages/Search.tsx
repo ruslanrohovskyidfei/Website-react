@@ -11,7 +11,7 @@ import {ProductItem} from "../Elements/ProductItem";
 function Search({refreshComponent}: any) {
     const productTitle: any = useParams().name;
     const products =
-    ProductsData.filter(product => product.name.toLowerCase().includes(productTitle) ? product : null
+    ProductsData.filter(product => product.name.toLowerCase().includes(productTitle) || product.name.includes(productTitle) ? product : null
     ).map((product) => {
         return (
             <ProductItem title={product.name} img={product.img} price={product.price} id={product.id} slider={false}
