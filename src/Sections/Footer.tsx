@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
-import '../Styles/App.css';
+import '../Styles/Sections/Footer.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartShopping, faCopyright, faSearch} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";

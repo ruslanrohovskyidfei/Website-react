@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
+import '../Styles/Sections/Newsletter.css';
 
 function Newsletter() {
     const [inputValue, setInputValue] = useState('');

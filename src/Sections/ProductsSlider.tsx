@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import {SliderItem} from "../Elements/SliderItem";
 import ProductsData from "../Data/ProductsData";
 import {ProductItem} from "../Elements/ProductItem";
+import '../Styles/Product/ProductItem.css';
 
 function ProductsSlider(){
     var settings = {

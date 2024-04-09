@@ -1,7 +1,6 @@
 import React from 'react';
-import '../Styles/App.css';
-import Header from '../Sections/Header';
-import Footer from '../Sections/Footer';
+import '../Styles/Pages/About.css';
+import '../Styles/Pages/Home.css';
 import Newsletter from "../Sections/Newsletter";
 import SimpleSlider from "../Sections/SimpleSlider";
 import ProductsSlider from "../Sections/ProductsSlider";

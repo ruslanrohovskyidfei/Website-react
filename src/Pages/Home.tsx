@@ -3,7 +3,7 @@ import SimpleSlider from "../Sections/SimpleSlider";
 /* Styles */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../Styles/App.css';
+import '../Styles/Pages/Home.css';
 import Newsletter from "../Sections/Newsletter";
 import SingleSlider from "../Sections/SingleSlider";
 import ProductsSlider from "../Sections/ProductsSlider";

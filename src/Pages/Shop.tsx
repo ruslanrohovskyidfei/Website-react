@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import '../Styles/App.css';
 import {ProductItem} from "../Elements/ProductItem";
 import ProductsData from "../Data/ProductsData";
 import Newsletter from "../Sections/Newsletter";
 import SimpleSlider from "../Sections/SimpleSlider";
-import InfiniteScroll from "react-infinite-scroll-component";
-import ProductsSlider from "../Sections/ProductsSlider";
 
 const Shop = () => {
     const products = ProductsData.map(product => {

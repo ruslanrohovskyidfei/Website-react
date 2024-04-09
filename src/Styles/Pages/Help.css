@@ -1,0 +1,14 @@
+section.Help {
+    font-size: 20px;
+}
+section.Help .container {
+    padding: 40px 20px;
+    text-align: left;
+}
+section.Help h1 {
+    text-align: center;
+}
+section.Help h2 {
+    margin-top: 20px;
+    font-size: 1.3em;
+}

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import '../Styles/App.css';
-import '../Styles/CartItem.css';
+import '../Styles/Cart/CartItem.css';
 import Newsletter from "../Sections/Newsletter";
 import SimpleSlider from "../Sections/SimpleSlider";
 import ProductsSlider from "../Sections/ProductsSlider";

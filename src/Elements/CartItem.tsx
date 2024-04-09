@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import {NavLink, useParams} from "react-router-dom";
-import '../Styles/ProductItem.css';
+import '../Styles/Product/ProductItem.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faRemove} from "@fortawesome/free-solid-svg-icons";
 

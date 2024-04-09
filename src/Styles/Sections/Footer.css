@@ -1,0 +1,35 @@
+footer {
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+footer ul.menu {
+    list-style: none;
+    font-size: 25px;
+    padding: 0;
+}
+footer ul.menu li.menu-link {
+    margin-top: 20px;
+}
+footer ul.menu li.menu-link a.link {
+    color: white;
+    text-decoration: none;
+}
+footer ul.menu li.menu-link a.link.active {
+    color: #61dafb;
+}
+footer .copyright {
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .copyright .text {
+    margin-left: 10px;
+}

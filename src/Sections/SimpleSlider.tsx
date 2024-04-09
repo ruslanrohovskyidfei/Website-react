@@ -2,6 +2,8 @@ import React from "react";
 // @ts-ignore
 import Slider from "react-slick";
 import {SliderItem} from "../Elements/SliderItem";
+import '../Styles/Pages/Home.css';
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function SimpleSlider(){
     var settings = {

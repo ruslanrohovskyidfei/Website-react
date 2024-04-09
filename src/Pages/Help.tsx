@@ -1,5 +1,6 @@
 import React from 'react';
-import '../Styles/App.css';
+import '../Styles/Pages/Help.css';
+import '../Styles/Pages/Home.css';
 import SimpleSlider from "../Sections/SimpleSlider";
 import Newsletter from "../Sections/Newsletter";
 import ProductsSlider from "../Sections/ProductsSlider";

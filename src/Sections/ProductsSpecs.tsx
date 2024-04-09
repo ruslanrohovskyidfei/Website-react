@@ -1,8 +1,7 @@
 import React from 'react';
 import {useParams, useNavigate} from "react-router-dom"
 import ProductsData from "../Data/ProductsData";
-import '../Styles/App.css';
-import '../Styles/ProductPage.css';
+import '../Styles/Product/ProductPage.css';
 
 
 function ProductSpecs() {

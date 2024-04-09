@@ -4,8 +4,7 @@ import ProductsData from "../Data/ProductsData";
 import ProductsSlider from "../Sections/ProductsSlider";
 import ProductsSpecs from "../Sections/ProductsSpecs";
 import Newsletter from "../Sections/Newsletter";
-import '../Styles/App.css';
-import '../Styles/ProductPage.css';
+import '../Styles/Product/ProductPage.css';
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 

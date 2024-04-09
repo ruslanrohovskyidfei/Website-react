@@ -1,0 +1,69 @@
+section.Home {
+    padding: 0;
+    position: relative;
+}
+section.Home h1 {
+    margin-top: 20px;
+}
+.Main-slider {
+    width: 100%;
+    overflow-x: hidden;
+}
+.Main-slider img {
+    width: 100%;
+}
+section.Home .General-slider {
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-x: hidden;
+    position: relative;
+}
+section.Home .General-slider .slick-slider,
+section.Home .General-slider .slick-list,
+section.Home .General-slider .slick-track,
+section.Home .General-slider .slick-slide,
+section.Home .General-slider .slick-slide div {
+    height: calc(100vh - 60px);
+}
+section.Home .General-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section.Home .General-slider .welcome-text {
+    position: absolute;
+    bottom: 20%;
+    left: 60%;
+}
+section.Home .General-slider .welcome-text > p {
+    font-size: 25px;
+    color: white;
+    text-shadow: 0 0 15px black;
+    text-align: center;
+    max-width: 90%;
+    user-select: none;
+}
+/* Home subtitle */
+.home-content-wrapper {
+    display: flex;
+}
+.home-content-inner-wrapper {
+    width: 60%;
+    padding: 20px 0;
+}
+.home-content-wrapper .home-subtitle {
+    padding: 20px 40px;
+    font-size: 20px;
+    text-align: left;
+    max-width: 70%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.home-content-wrapper .home-content-image-wrapper {
+    width: 40%;
+}
+.home-content-wrapper .home-content-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

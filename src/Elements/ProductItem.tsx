@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import '../Styles/ProductItem.css';
+import '../Styles/Product/ProductItem.css';
 
 type CardProps = {
     title: string,
