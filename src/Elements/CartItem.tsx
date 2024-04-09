@@ -1,24 +1,41 @@
-import React from 'react';
-import {NavLink} from "react-router-dom";
+import React, {useState, useCallback} from 'react';
+import {NavLink, useParams} from "react-router-dom";
 import '../Styles/ProductItem.css';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faRemove} from "@fortawesome/free-solid-svg-icons";
 
 type CardProps = {
     title: string,
     price: number,
     img: string,
     id: string,
-    slider: boolean
+    quantity: number,
+    refreshComponent: any
 }
-
-export const ProductItem = ({ title, img, price, id, slider }: CardProps) =>
-    <div className={!slider ? "product-item" : "product-item slide"}>
-        <NavLink to={"/shop/" + id}>
-            <div className="product-item-img">
-                <img src={img} alt={title}/>
+export const CartItem = ({ title, img, price, id, quantity, refreshComponent }: CardProps) => {
+    const removeItem = (removeId: any) => {
+        const cartLocalStorage = JSON.parse(localStorage.getItem("cartItems") || "[]");
+        console.log('cartLocalStorage', cartLocalStorage);
+        let newCartList = cartLocalStorage.filter((cartItem: { id: string }) => removeId !== cartItem.id);
+        localStorage.setItem('cartItems', JSON.stringify([...newCartList]));
+        refreshComponent();
+    }
+    return (
+        <div className="cart-item" key={id}>
+            <NavLink to={"/shop/" + id}>
+                <div className="cart-item-img">
+                    <img src={img} alt={title}/>
+                </div>
+            </NavLink>
+            <div className="cart-item-content-wrapper">
+                <h2 className="cart-item-title">{title}</h2>
+                <div className="cart-item-price">${price}</div>
             </div>
-        </NavLink>
-        <div className="product-item-content-wrapper">
-            <h2 className="product-item-title">{title}</h2>
-            <div className="product-item-price">${price}</div>
+            <div className="cart-item-quantity">Quantity: {quantity}</div>
+            <button onClick={() => removeItem(id)} className="button-cart-remove">
+                <FontAwesomeIcon icon={faRemove}/>
+                <p className="text">Remove</p>
+            </button>
         </div>
-    </div>
+    )
+}

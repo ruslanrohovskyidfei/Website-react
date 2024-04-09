@@ -2,25 +2,31 @@ import React from "react";
 // @ts-ignore
 import Slider from "react-slick";
 import {SliderItem} from "../Elements/SliderItem";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function SimpleSlider(){
+import ProductsData from "../Data/ProductsData";
+import {ProductItem} from "../Elements/ProductItem";
+
+function ProductsSlider(){
     var settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         autoplay: true,
         speed: 500,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
     };
-
+    const products = ProductsData.map(product => {
+        return (
+            <ProductItem title={product.name} img={product.img} price={product.price} id={product.id} slider={true} key={product.id} searchTitle={""}/>
+        );
+    });
     return (
-        <Slider {...settings}>
-            <SliderItem img="./Images/music-lover_4460x4460.jpg" alt="Music lover" />
-            <SliderItem img="./Images/man-wearing-over-ear-headphones_4460x4460.jpg" alt="Music lover"/>
-            <SliderItem img="./Images/looking-out-window-wearing-headphones_4460x4460.jpg" alt="Music lover"/>
-            <SliderItem img="./Images/over-ear-headphones_4460x4460.jpg" alt="Music lover"/>
-        </Slider>
+        <section className="products-slider">
+            <h2>Our products</h2>
+            <Slider {...settings}>
+                {products}
+            </Slider>
+        </section>
     );
 }
 
-export default SimpleSlider;
+export default ProductsSlider;

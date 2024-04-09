@@ -1,15 +1,11 @@
 import React from 'react'; // we need this to make JSX compile
 
 type SliderItemProps = {
-    title: string,
-    img: string
+    img: string,
+    alt: string
 }
 
-export const SliderItem = ({ title, img }: SliderItemProps) => <aside>
-    <h2>{ title }</h2>
-    <p>
-        <img src={ img } alt=""/>
-    </p>
-</aside>
-
-const el = <Card title="Welcome!" img="To this example" />
+export const SliderItem = ({ img, alt }: SliderItemProps) =>
+    <div className="slider-item">
+        <img src={img} alt={alt}/>
+    </div>

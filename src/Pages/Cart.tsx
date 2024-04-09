@@ -1,14 +1,31 @@
-import React from 'react';
-import './Styles/App.css';
-import Header from './Header';
-import Footer from './Footer';
+import React, {useState} from 'react';
+import '../Styles/App.css';
+import '../Styles/CartItem.css';
+import Newsletter from "../Sections/Newsletter";
+import SimpleSlider from "../Sections/SimpleSlider";
+import ProductsSlider from "../Sections/ProductsSlider";
+import {CartItem} from "../Elements/CartItem";
 
-function Cart() {
-  return (
-      <div className="Cart">
+function Cart({refreshComponent}: any) {
+    const cartLocalStorage: [] = JSON.parse(localStorage.getItem("cartItems") || "[]");
+    const cartProducts = cartLocalStorage.map((product, index) => {
+        return (
+            <CartItem title={product['name']} img={product['img']} price={product['price']} quantity={product['quantity']} id={product['id']} refreshComponent={refreshComponent} key={index}/>
+        );
+    });
+    return (
+      <section className="Cart">
           <h1>Cart</h1>
-      </div>
-  );
+          <div className="cart-list">
+              {cartProducts.length != 0 ? cartProducts : <div className="empty-cart">Empty cart</div>}
+          </div>
+          <ProductsSlider />
+          <Newsletter/>
+          <div className="Main-slider">
+              <SimpleSlider/>
+          </div>
+      </section>
+    );
 }
 
 export default Cart;

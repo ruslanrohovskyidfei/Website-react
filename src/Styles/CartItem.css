@@ -1,58 +1,92 @@
-.products-list {
+.cart-list {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     height: 650px;
     overflow-y: scroll;
+    margin-top: 15px;
+    padding: 20px 40px;
+    border-bottom: 1px dashed black;
 }
-.product-item {
-    width: 33.3%;
+.empty-cart,
+.empty-search {
+    font-size: 30px;
+    margin: auto;
+}
+.cart-item {
+    width: 100%;
     margin-bottom: 25px;
-    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px dashed black;
+    padding-top: 50px;
 }
-.product-item.slide {
+.cart-item:first-child {
+    padding-top: 0;
+    border-top: none;
+}
+.cart-item.slide {
     width: auto;
     margin-bottom: 0;
 }
-.product-item .product-item-img {
-    width: auto;
+.cart-item .cart-item-img {
+    width: 250px;
     height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 5px black;
+    border-radius: 15px;
 }
-.product-item .product-item-img img {
+.cart-item .cart-item-quantity {
+    margin: 0 auto;
+    font-size: 20px;
+}
+.cart-item .cart-item-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    border-radius: 15px;
 }
-.product-item-content-wrapper {
-    margin-top: -45px;
+.cart-item-content-wrapper {
     background: white;
+    margin-left: 10%;
+    margin-right: auto;
 }
-.product-item-title {
+.cart-item-title {
     font-size: 25px;
     margin: 5px 0;
     text-shadow: 0 0 5px white;
 }
-.product-item-button {
-    margin-top: 10px;
+.button-cart-remove {
     background: black;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 0;
     padding: 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-
+.button-cart-remove:hover {
+    color: #61dafb;
+}
+.button-cart-remove .text {
+    margin-left: 20px;
+}
 @media (max-width: 800px) {
-    .product-item {
+    .cart-item {
         width: 50%;
         margin-bottom: 15px;
     }
 }
 @media (max-width: 450px) {
-    .product-item {
+    .cart-item {
         width: 100%;
         margin-bottom: 10px;
     }
