@@ -11,7 +11,7 @@ function ProductsSlider(){
         infinite: true,
         autoplay: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 2,
     };
     const products = ProductsData.map(product => {

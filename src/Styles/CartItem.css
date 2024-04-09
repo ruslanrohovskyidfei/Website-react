@@ -7,7 +7,6 @@
     overflow-y: scroll;
     margin-top: 15px;
     padding: 20px 40px;
-    border-bottom: 1px dashed black;
 }
 .empty-cart,
 .empty-search {

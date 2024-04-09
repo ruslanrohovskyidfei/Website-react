@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useParams, useNavigate} from "react-router-dom"
 import ProductsData from "../Data/ProductsData";
 import ProductsSlider from "../Sections/ProductsSlider";
@@ -47,13 +47,19 @@ function Product({refreshComponent}:any) {
                         <img src={product?.img} alt={product?.name}/>
                     </div>
                     <div className="product-content-wrapper">
-                        <div className="product-description">{product?.description}</div>
-                        <div className="product-price">${product?.price}</div>
-                        <button className="product-button" onClick={() => addItem(product)}>Buy</button>
+                            <div className={`product-type-img overear${product?.img.includes("product2") ? " show" : "" }`} >
+                            <img src="../Images/headphones-support-overear.jpg" alt="Overear"/>
+                            </div>
+                            <div className={`product-type-img earbuds${product?.img.includes("product1") ? " show" : "" }`}>
+                            <img src="../Images/headphones-support-earbuds.jpg" alt="Earbuds"/>
+                            </div>
+                            <div className="product-description">{product?.description}</div>
+                    <div className="product-price">${product?.price}</div>
+                    <button className="product-button" onClick={() => addItem(product)}>Buy</button>
                     </div>
                 </div>
                 <ProductsSpecs/>
-             </div>
+            </div>
             <Newsletter/>
             <ProductsSlider/>
         </div>

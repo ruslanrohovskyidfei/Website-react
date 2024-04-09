@@ -16,9 +16,11 @@ const Shop = () => {
 
     return (
         <section className="Shop">
-            <h1>Shop</h1>
-            <div className="products-list">
-                {products}
+            <div className="container">
+                <h1>Shop</h1>
+                <div className="products-list">
+                    {products}
+                </div>
             </div>
             <Newsletter/>
             <div className="Main-slider">

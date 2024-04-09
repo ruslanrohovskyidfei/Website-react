@@ -15,11 +15,13 @@ function Cart({refreshComponent}: any) {
     });
     return (
       <section className="Cart">
-          <h1>Cart</h1>
-          <div className="cart-list">
-              {cartProducts.length != 0 ? cartProducts : <div className="empty-cart">Empty cart</div>}
+          <div className="container">
+              <h1>Cart</h1>
+              <div className="cart-list">
+                  {cartProducts.length != 0 ? cartProducts : <div className="empty-cart">Empty cart</div>}
+              </div>
           </div>
-          <ProductsSlider />
+          <ProductsSlider/>
           <Newsletter/>
           <div className="Main-slider">
               <SimpleSlider/>
