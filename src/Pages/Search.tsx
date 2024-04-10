@@ -26,11 +26,13 @@ function Search({refreshComponent}: any) {
     console.log(products.length, products);
     return (
         <section className="Cart">
-            <h1>Search results { productTitle ? '- ' + productTitle : ""}</h1>
-            <div className="cart-list">
-                { products.length > 0 ? products : <div className="empty-search">No Results</div> }
+            <div className="container">
+                <h1>Search results {productTitle ? '- ' + productTitle : ""}</h1>
+                <div className="cart-list">
+                    {products.length > 0 ? products : <div className="empty-search">No Results</div>}
+                </div>
             </div>
-            <ProductsSlider />
+            <ProductsSlider/>
             <Newsletter/>
             <div className="Main-slider">
                 <SimpleSlider images={slides} alt={"Search"}/>

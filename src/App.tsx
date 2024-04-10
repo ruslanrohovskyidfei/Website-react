@@ -12,9 +12,20 @@ import {Routes, Route} from "react-router-dom";
 import './Styles/App.css';
 
 function App() {
-  const [state, refreshState] = useState(0);
-  const refresh: Function = () => refreshState(state + 1);
-
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+        if(windowWidth > 992) {
+            document.body.style.overflowY = "auto";
+            document.body.style.overflowX = "hidden";
+        }
+    };
+    window.addEventListener("resize", handleResize);
+    const [state, refreshState] = useState(0);
+    const refresh: Function = () => refreshState(state + 1);
+    document.addEventListener('resize', function (e) {
+        document.body.style.overflow = "auto";
+    });
     return (
     <div className="App">
         <Header />

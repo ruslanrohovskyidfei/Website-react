@@ -5,7 +5,7 @@ import ProductsSlider from "../Sections/ProductsSlider";
 import ProductsSpecs from "../Sections/ProductsSpecs";
 import Newsletter from "../Sections/Newsletter";
 import '../Styles/Product/ProductPage.css';
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft, faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import SingleSlider from "../Sections/SingleSlider";
 
@@ -34,6 +34,20 @@ function Product({refreshComponent}:any) {
         refreshComponent();
         navigate('/cart');
     }
+    const showBadges = () => {
+        return (
+            <>
+                <div
+                    className={`product-type-img overear${product?.img[0].includes("product2") ? " show" : ""}`}>
+                    <img src="../Images/headphones-support-overear.jpg" alt="Overear"/>
+                </div>
+                <div
+                    className={`product-type-img earbuds${product?.img[0].includes("product1") ? " show" : ""}`}>
+                    <img src="../Images/headphones-support-earbuds.jpg" alt="Earbuds"/>
+                </div>
+            </>
+        );
+    }
     return (
         <div className="container full-width">
             <div className="container">
@@ -43,18 +57,11 @@ function Product({refreshComponent}:any) {
                 </button>
                 <div className="product">
                     <div className="product-img">
-
+                        {/*{showBadges()}*/}
                         <SingleSlider mainSlider={false} images={product?.img} alt={product?.name} />
                     </div>
                     <div className="product-content-wrapper">
-                        {/*<div*/}
-                        {/*    className={`product-type-img overear${product?.img[0].includes("product2") ? " show" : ""}`}>*/}
-                        {/*    <img src="../Images/headphones-support-overear.jpg" alt="Overear"/>*/}
-                        {/*</div>*/}
-                        {/*<div*/}
-                        {/*    className={`product-type-img earbuds${product?.img[0].includes("product1") ? " show" : ""}`}>*/}
-                        {/*    <img src="../Images/headphones-support-earbuds.jpg" alt="Earbuds"/>*/}
-                        {/*</div>*/}
+
                         <h2 className="product-title">
                             <p>{product?.name}</p>
                         </h2>
@@ -62,7 +69,10 @@ function Product({refreshComponent}:any) {
                         <div className="product-quantity-minus"></div>
                         <div className="product-price">${product?.price}</div>
                         <div className="product-quantity-plus"></div>
-                        <button className="product-button" onClick={() => addItem(product)}>Buy</button>
+                        <button className="product-button" onClick={() => addItem(product)}>
+                            <FontAwesomeIcon icon={faCartShopping}/>
+                            <p className="text">Buy</p>
+                        </button>
                     </div>
                 </div>
                 <ProductsSpecs/>

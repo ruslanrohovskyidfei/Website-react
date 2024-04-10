@@ -17,6 +17,7 @@
     font-size: calc(10px + 1vmin);
     color: white;
     position: relative;
+    z-index: 9;
 }
 .App-header ul.menu {
     display: flex;
@@ -26,72 +27,6 @@
 }
 .App-header .menu-trigger {
     display: none;
-}
-@media (max-width: 992px) {
-    .App-header ul.menu {
-        display: none;
-    }
-    .App-header ul.menu.show {
-        display: flex;
-    }
-    .App-header nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 9;
-    }
-    .App-header ul.menu {
-        width: 45vw;
-        height: 100vh;
-        background-color: white;
-        padding: 0 0 10vw 0;
-        flex-direction: column;
-        z-index: 9;
-        margin: auto;
-        align-items: flex-end;
-    }
-    .App-header ul.menu:after {
-        content: "";
-        width: 55vw;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        right: -55vw;
-        z-index: -1;
-        background: rgba(0,0,0,0.6);
-    }
-    .App-header ul.menu li {
-        margin-right: 5%;
-        border-radius: 15px;
-        z-index: 11;
-    }
-    .App-header ul.menu li a.link {
-        color: black!important;
-    }
-    .App-header ul.menu li.menu-search {
-        width: fit-content;
-    }
-    .App-header .menu-trigger {
-        position: absolute;
-        top: 50%;
-        right: 3%;
-        transform: translateY(-50%);
-        display: flex;
-        background-color: transparent;
-        color: white;
-        width: 30px;
-        height: 30px;
-        outline: none;
-        padding: 0;
-        margin: 0;
-        border: none;
-        font-size: 30px;
-    }
-}
-@media (max-width: 800px) {
-    .App-header ul.menu {
-        width: 60vw;
-    }
 }
 .App-header ul.menu li.menu-search,
 .App-header ul.menu li.menu-link,
@@ -242,5 +177,117 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+@keyframes move-menu {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: 90vw;
+    }
+}
+@keyframes move-menu-2 {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: 60vw;
+    }
+}
+@keyframes move-background {
+    from {
+        right: 0vw;
+    }
+    to {
+        right: -55vw;
+    }
+}
+@media (max-width: 992px) {
+    .App {
+        min-height: auto;
+    }
+    .App-header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    .App-header nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+    .App-header ul.menu {
+        width: 0vw;
+        height: 100vh;
+        background-color: white;
+        padding: 0 0 10vw 0;
+        flex-direction: column;
+        z-index: 9;
+        margin: auto;
+        align-items: flex-end;
+    }
+    .App-header ul.menu.show {
+        animation: move-menu 0.3s;
+        width: 60vw;
+    }
+    .App-header ul.menu.show:after {
+        content: "";
+        width: 55vw;
+        height: 100vh;
+        animation: move-background 1s;
+        position: absolute;
+        top: 0;
+        right: -55vw;
+        z-index: -1;
+        background: rgba(0,0,0,0.6);
+    }
+    .App-header ul.menu li {
+        margin-right: 5%;
+        border-radius: 15px;
+        z-index: 11;
+    }
+    .App-header ul.menu li a.link {
+        color: black!important;
+    }
+    .App-header ul.menu li.menu-search {
+        width: fit-content;
+    }
+    .App-header .menu-trigger {
+        position: absolute;
+        top: 50%;
+        right: 3%;
+        transform: translateY(-50%);
+        display: flex;
+        background-color: transparent;
+        color: white;
+        width: 30px;
+        height: 30px;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+@media (max-width: 800px) {
+    .App-header ul.menu.show {
+        animation: move-menu-2 1s;
+        width: 60vw;
+    }
+}
+@media (max-width: 600px) {
+    .App-header ul.menu.show {
+        animation: move-menu 1s;
+        width: 90vw;
+    }
+    .App-header ul.menu li a.link {
+        font-size: 20px;
+    }
+    .App-header ul.menu li.menu-search input.search {
+        width: 95%;
     }
 }

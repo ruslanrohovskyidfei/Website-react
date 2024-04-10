@@ -26,13 +26,18 @@ function Header() {
         } else {
             setMenuMode(!menu)
         }
+        if(menu === true) {
+            document.body.style.overflow = "auto";
+        } else {
+            document.body.style.overflow = "hidden";
+        }
     };
     return (
         <header className="App-header">
             <NavLink to={'/'}>
                 <img src={logo} className="App-logo" alt="logo"/>
             </NavLink>
-            <button className="menu-trigger" onClick={() => setMenuMode(!menu)}>
+            <button className="menu-trigger" onClick={(e) => SetMenu(e)}>
                 <FontAwesomeIcon icon={faBars}/>
             </button>
             <nav onClick={(e) => SetMenu(e)}
