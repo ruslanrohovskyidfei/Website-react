@@ -110,9 +110,23 @@ section.Home .General-slider .home-button .link {
         height: 80vh;
     }
     section.Home .General-slider .welcome-text {
-        bottom: 0;
+        bottom: -8%;
         left: 5%!important;
         width: 100%;
         transform: translateY(-50%);
+    }
+}
+@media (max-width: 768px) {
+    .home-content-wrapper {
+        padding-bottom: 0;
+    }
+    .home-content-wrapper .home-content-image-wrapper {
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+    .home-content-wrapper .home-content-image-wrapper img {
+        border-radius: 0;
     }
 }
