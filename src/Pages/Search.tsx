@@ -32,8 +32,8 @@ function Search({refreshComponent}: any) {
                     {products.length > 0 ? products : <div className="empty-search">No Results</div>}
                 </div>
             </div>
-            <ProductsSlider/>
             <Newsletter/>
+            <ProductsSlider/>
             <div className="Main-slider">
                 <SimpleSlider images={slides} alt={"Search"}/>
             </div>
