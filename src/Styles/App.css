@@ -1,3 +1,6 @@
+body.showMenu {
+  overflow: hidden;
+}
 .App {
   text-align: center;
   overflow: hidden;
@@ -7,6 +10,24 @@
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 800px;
+    padding: 0 40px;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  .App-logo {
+    height: 50px;
+  }
+}
+.container h1 {
+  font-size: 30px;
 }
 .container.full-width {
   max-width: 100%;
@@ -28,10 +49,11 @@
 .route-back-button div {
   margin-left: 10px
 }
-.App > section > h1 {
+.App h1 {
   position: relative;
   width: fit-content;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 35px;
 }
 

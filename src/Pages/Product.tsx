@@ -7,6 +7,7 @@ import Newsletter from "../Sections/Newsletter";
 import '../Styles/Product/ProductPage.css';
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import SingleSlider from "../Sections/SingleSlider";
 
 function Product({refreshComponent}:any) {
     const productId = useParams().title
@@ -40,21 +41,28 @@ function Product({refreshComponent}:any) {
                     <FontAwesomeIcon icon={faArrowLeft}/>
                     <div>Back</div>
                 </button>
-                <h2 className="product-title">{product?.name}</h2>
                 <div className="product">
                     <div className="product-img">
-                        <img src={product?.img} alt={product?.name}/>
+
+                        <SingleSlider mainSlider={false} images={product?.img} alt={product?.name} />
                     </div>
                     <div className="product-content-wrapper">
-                            <div className={`product-type-img overear${product?.img.includes("product2") ? " show" : "" }`} >
-                            <img src="../Images/headphones-support-overear.jpg" alt="Overear"/>
-                            </div>
-                            <div className={`product-type-img earbuds${product?.img.includes("product1") ? " show" : "" }`}>
-                            <img src="../Images/headphones-support-earbuds.jpg" alt="Earbuds"/>
-                            </div>
-                            <div className="product-description">{product?.description}</div>
-                    <div className="product-price">${product?.price}</div>
-                    <button className="product-button" onClick={() => addItem(product)}>Buy</button>
+                        {/*<div*/}
+                        {/*    className={`product-type-img overear${product?.img[0].includes("product2") ? " show" : ""}`}>*/}
+                        {/*    <img src="../Images/headphones-support-overear.jpg" alt="Overear"/>*/}
+                        {/*</div>*/}
+                        {/*<div*/}
+                        {/*    className={`product-type-img earbuds${product?.img[0].includes("product1") ? " show" : ""}`}>*/}
+                        {/*    <img src="../Images/headphones-support-earbuds.jpg" alt="Earbuds"/>*/}
+                        {/*</div>*/}
+                        <h2 className="product-title">
+                            <p>{product?.name}</p>
+                        </h2>
+                        <div className="product-description">{product?.description}</div>
+                        <div className="product-quantity-minus"></div>
+                        <div className="product-price">${product?.price}</div>
+                        <div className="product-quantity-plus"></div>
+                        <button className="product-button" onClick={() => addItem(product)}>Buy</button>
                     </div>
                 </div>
                 <ProductsSpecs/>

@@ -46,6 +46,9 @@
 }
 
 @media (max-width: 800px) {
+    .products-list {
+        height: auto;
+    }
     .product-item {
         width: 50%;
         margin-bottom: 15px;

@@ -5,6 +5,11 @@ import Newsletter from "../Sections/Newsletter";
 import SimpleSlider from "../Sections/SimpleSlider";
 
 const Shop = () => {
+    const slides = ["../Images/small-slide1.jpg",
+                            "../Images/small-slide2.jpg",
+                            "../Images/small-slide3.jpg",
+                            "../Images/small-slide4.jpg",
+                            "../Images/small-slide5.jpg"];
     const products = ProductsData.map(product => {
         return (
             <ProductItem title={product.name} img={product.img} price={product.price} id={product.id} slider={false} key={product.id} searchTitle={""}/>
@@ -21,7 +26,7 @@ const Shop = () => {
             </div>
             <Newsletter/>
             <div className="Main-slider">
-                <SimpleSlider/>
+                <SimpleSlider images={slides} alt={"products"}/>
             </div>
         </section>
     );

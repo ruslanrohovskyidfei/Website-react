@@ -29,9 +29,12 @@ export const CartItem = ({ title, img, price, id, quantity, refreshComponent }: 
             </NavLink>
             <div className="cart-item-content-wrapper">
                 <h2 className="cart-item-title">{title}</h2>
-                <div className="cart-item-price">${price}</div>
+                <div className="cart-item-price">${price * quantity}</div>
             </div>
-            <div className="cart-item-quantity">Quantity: {quantity}</div>
+            <div className="cart-item-quantity">
+                <p>Quantity:</p>
+                <p>{quantity}</p>
+            </div>
             <button onClick={() => removeItem(id)} className="button-cart-remove">
                 <FontAwesomeIcon icon={faRemove}/>
                 <p className="text">Remove</p>

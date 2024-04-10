@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import '../Styles/Cart/CartItem.css';
+import '../Styles/Cart/Cart.css';
 import Newsletter from "../Sections/Newsletter";
 import SimpleSlider from "../Sections/SimpleSlider";
 import ProductsSlider from "../Sections/ProductsSlider";
@@ -8,6 +8,11 @@ import ProductsData from "../Data/ProductsData";
 import {ProductItem} from "../Elements/ProductItem";
 
 function Search({refreshComponent}: any) {
+    const slides = ["../Images/small-slide1.jpg",
+        "../Images/small-slide2.jpg",
+        "../Images/small-slide3.jpg",
+        "../Images/small-slide4.jpg",
+        "../Images/small-slide5.jpg"];
     const productTitle: any = useParams().name;
     const products =
     ProductsData.filter(product => product.name.toLowerCase().includes(productTitle) || product.name.includes(productTitle) ? product : null
@@ -17,6 +22,7 @@ function Search({refreshComponent}: any) {
                          key={product.id} searchTitle={productTitle} />
         );
     });
+
     console.log(products.length, products);
     return (
         <section className="Cart">
@@ -27,7 +33,7 @@ function Search({refreshComponent}: any) {
             <ProductsSlider />
             <Newsletter/>
             <div className="Main-slider">
-                <SimpleSlider/>
+                <SimpleSlider images={slides} alt={"Search"}/>
             </div>
         </section>
     );

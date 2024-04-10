@@ -7,13 +7,35 @@ import {ProductItem} from "../Elements/ProductItem";
 import '../Styles/Product/ProductItem.css';
 
 function ProductsSlider(){
-    var settings = {
+    const settings = {
         dots: false,
         infinite: true,
         autoplay: true,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 2,
+        responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 475,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
     };
     const products = ProductsData.map(product => {
         return (

@@ -5,56 +5,79 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { NavLink } from "react-router-dom";
 import '../Styles/Sections/Header.css';
 import {
-    faCartShopping, faDotCircle, faSearch,
+    faCartShopping, faBars, faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
+    document.title = "Soundscape! Ultimate destination!";
     const cartLocalStorageLength: number = JSON.parse(localStorage.getItem("cartItems") || "[]").length;
     const [searchInput, setSearchInput] = useState("");
+    const [menu, setMenuMode] = useState(false);
     const navigate = useNavigate();
+    const SetMenu = (e: any) => {
+        const tag = e.target.tagName;
+        const className = e.target.className;
+        const keyCode = e.keyCode;
+        if(tag !== "UL") {
+            e.preventDefault();
+            if(className !== "search") {
+                setMenuMode(!menu)
+            }
+        } else {
+            setMenuMode(!menu)
+        }
+    };
     return (
-      <header className="App-header">
-        <NavLink to={'/'}>
-            <img src={logo} className="App-logo" alt="logo" />
-        </NavLink>
-        <nav>
-            <ul className="menu">
-                <li className="menu-search">
-                    <p className="icon" onClick={() => navigate("/search/" + searchInput)}>
-                        <FontAwesomeIcon icon={faSearch}/>
-                    </p>
-                    <input type="text" className="search" placeholder="Search"
-                       onChange={(e) => setSearchInput(e.target.value)}
-                       onKeyDown={(e) => ( e.keyCode === 13 ? navigate("/search/" + searchInput)  : null )}
-                    />
-                    <NavLink className={'link'} to="/search">
-                        <p className="text">Search</p>
-                    </NavLink>
-                </li>
-                <li className={"menu-link"}>
-                    <NavLink className={({isActive}) => (isActive ? "link active" : "link")} to="/">Home</NavLink>
-                </li>
-                <li className="menu-link">
-                    <NavLink className={({ isActive }) => (isActive ? "link active" : "link")} to="/about">About</NavLink>
-                </li>
-                <li className="menu-link">
-                    <NavLink className={({ isActive }) => (isActive ? "link active" : "link")} to="/shop">Shop</NavLink>
-                </li>
-                <li className="menu-link">
-                    <NavLink className={({ isActive }) => (isActive ? "link active" : "link")} to="/help">Help</NavLink>
-                </li>
-                <li className="menu-cart">
-                    <NavLink className={({isActive}) => (isActive ? "link active" : "link")} to="/cart">
-                        <p className="icon">
-                            <FontAwesomeIcon icon={faCartShopping}/>
-                            {cartLocalStorageLength > 0 ? <p className="count">{cartLocalStorageLength}</p> : ""}
+        <header className="App-header">
+            <NavLink to={'/'}>
+                <img src={logo} className="App-logo" alt="logo"/>
+            </NavLink>
+            <button className="menu-trigger" onClick={() => setMenuMode(!menu)}>
+                <FontAwesomeIcon icon={faBars}/>
+            </button>
+            <nav onClick={(e) => SetMenu(e)}
+                 onKeyDown={(e) => (e.keyCode === 13 ?  setMenuMode(!menu) : false )}
+            >
+                <ul className={"menu" + (menu === true ? " show" : "") }>
+                    <li className="menu-search">
+                        <p className="icon" onClick={() => navigate("/search/" + searchInput)}>
+                            <FontAwesomeIcon icon={faSearch}/>
                         </p>
-                        <p className="text">Cart</p>
-                    </NavLink>
-                </li>
-            </ul>
-        </nav>
-      </header>
+                        <input type="text" className="search" placeholder="Search"
+                               onChange={(e) => setSearchInput(e.target.value)}
+                               onKeyDown={(e) => (e.keyCode === 13 ? navigate("/search/" + searchInput) : null)}
+                        />
+                        <NavLink className={'link'} to="/search">
+                            <p className="text">Search</p>
+                        </NavLink>
+                    </li>
+                    <li className={"menu-link"}>
+                        <NavLink className={({isActive}) => (isActive ? "link active" : "link")} to="/">Home</NavLink>
+                    </li>
+                    <li className="menu-link">
+                        <NavLink className={({isActive}) => (isActive ? "link active" : "link")}
+                                 to="/about">About</NavLink>
+                    </li>
+                    <li className="menu-link">
+                        <NavLink className={({isActive}) => (isActive ? "link active" : "link")}
+                                 to="/shop">Shop</NavLink>
+                    </li>
+                    <li className="menu-link">
+                        <NavLink className={({isActive}) => (isActive ? "link active" : "link")}
+                                 to="/help">Help</NavLink>
+                    </li>
+                    <li className="menu-cart">
+                        <NavLink className={({isActive}) => (isActive ? "link active" : "link")} to="/cart">
+                            <p className="icon">
+                                <FontAwesomeIcon icon={faCartShopping}/>
+                                {cartLocalStorageLength > 0 ? <p className="count">{cartLocalStorageLength}</p> : ""}
+                            </p>
+                            <p className="text">Cart</p>
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     );
 }
 

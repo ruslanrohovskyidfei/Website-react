@@ -1,7 +1,7 @@
 section.newsletter {
     position: relative;
-    padding: 40px 40px 60px 40px;
-    background-color: black;
+    padding: 60px 40px 60px 40px;
+    background-color: #282c34;
     color: #61dafb;
     font-size: 30px;
 }
@@ -28,7 +28,7 @@ section.newsletter .input-newsletter {
     border: none;
     border-bottom: 1px solid #61dafb;
     outline: none;
-    background: black;
+    background: #282c34;
     box-sizing: border-box;
     padding: 0 10px;
     width: 350px;
@@ -54,4 +54,19 @@ section.newsletter .button-newletter-submit {
 section.newsletter .button-newletter-submit:hover {
     color: black;
     background: #61dafb;
+}
+@media (max-width: 768px) {
+    section.newsletter .newsletter-title {
+        max-width: 100%;
+        font-size: 18px;
+    }
+    section.newsletter .input-newsletter {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+    section.newsletter .button-newletter-submit {
+        margin-top: 30px;
+        font-size: 16px;
+    }
 }

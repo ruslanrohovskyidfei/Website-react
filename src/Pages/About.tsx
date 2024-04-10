@@ -6,6 +6,11 @@ import SimpleSlider from "../Sections/SimpleSlider";
 import ProductsSlider from "../Sections/ProductsSlider";
 
 function About() {
+    const slides = ["../Images/small-slide1.jpg",
+        "../Images/small-slide2.jpg",
+        "../Images/small-slide3.jpg",
+        "../Images/small-slide4.jpg",
+        "../Images/small-slide5.jpg"];
   return (
       <section className="About">
           <div className="container">
@@ -38,7 +43,7 @@ function About() {
           <Newsletter/>
           <ProductsSlider/>
           <div className="Main-slider">
-              <SimpleSlider/>
+              <SimpleSlider images={slides} alt={"About"}/>
           </div>
       </section>
   );

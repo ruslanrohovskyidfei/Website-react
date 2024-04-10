@@ -1,16 +1,21 @@
 import React, {useState} from 'react';
 import '../Styles/App.css';
-import '../Styles/Cart/CartItem.css';
+import '../Styles/Cart/Cart.css';
 import Newsletter from "../Sections/Newsletter";
 import SimpleSlider from "../Sections/SimpleSlider";
 import ProductsSlider from "../Sections/ProductsSlider";
 import {CartItem} from "../Elements/CartItem";
 
 function Cart({refreshComponent}: any) {
+    const slides = ["../Images/small-slide1.jpg",
+        "../Images/small-slide2.jpg",
+        "../Images/small-slide3.jpg",
+        "../Images/small-slide4.jpg",
+        "../Images/small-slide5.jpg"];
     const cartLocalStorage: [] = JSON.parse(localStorage.getItem("cartItems") || "[]");
     const cartProducts = cartLocalStorage.map((product, index) => {
         return (
-            <CartItem title={product['name']} img={product['img']} price={product['price']} quantity={product['quantity']} id={product['id']} refreshComponent={refreshComponent} key={index}/>
+            <CartItem title={product['name']} img={product['img'][0]} price={product['price']} quantity={product['quantity']} id={product['id']} refreshComponent={refreshComponent} key={index}/>
         );
     });
     return (
@@ -24,7 +29,7 @@ function Cart({refreshComponent}: any) {
           <ProductsSlider/>
           <Newsletter/>
           <div className="Main-slider">
-              <SimpleSlider/>
+              <SimpleSlider images={slides} alt={"products"}/>
           </div>
       </section>
     );

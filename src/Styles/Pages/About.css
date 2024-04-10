@@ -13,9 +13,20 @@ section.About .wrapper .content {
 }
 section.About .wrapper .image {
     width: 45%;
+    overflow: hidden;
 }
 section.About .wrapper .image img {
     object-fit: contain;
     width: 100%;
     height: 100%;
+    transform: scale(1.7);
+}
+@media (max-width: 768px) {
+    section.About .wrapper {
+        flex-direction: column-reverse;
+    }
+    section.About .container .wrapper .content,
+    section.About .container .wrapper .image {
+        width: 100%;
+    }
 }

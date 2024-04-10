@@ -10,7 +10,7 @@ function ProductSpecs() {
     return (
         <div className="product-specs">
             <h2>Description</h2>
-            <div className="product-description">{product?.description}</div>
+            <div className="product-description">{product?.descriptionFull}</div>
         </div>
     )
 }

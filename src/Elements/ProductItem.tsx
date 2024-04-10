@@ -5,7 +5,7 @@ import '../Styles/Product/ProductItem.css';
 type CardProps = {
     title: string,
     price: number,
-    img: string,
+    img: any,
     id: string,
     slider: boolean,
     searchTitle: string
@@ -20,7 +20,7 @@ export const ProductItem = ({ title, img, price, id, slider, searchTitle }: Card
     <div className={!slider ? "product-item" : "product-item slide"}>
         <NavLink onClick={scrollToTop} className="product-item-link" to={"/shop/" + id}>
             <div className="product-item-img">
-                <img src={img} alt={title}/>
+                <img src={img[0]} alt={title}/>
             </div>
         </NavLink>
         <div className="product-item-content-wrapper">

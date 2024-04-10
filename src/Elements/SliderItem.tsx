@@ -1,5 +1,4 @@
-import React from 'react'; // we need this to make JSX compile
-
+import React from 'react';
 type SliderItemProps = {
     img: string,
     alt: string
@@ -7,5 +6,5 @@ type SliderItemProps = {
 
 export const SliderItem = ({ img, alt }: SliderItemProps) =>
     <div className="slider-item">
-        <img src={img} alt={alt}/>
+            <img src={img} alt={alt} />
     </div>
