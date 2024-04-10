@@ -6,23 +6,29 @@ import {faCartShopping, faCopyright, faSearch} from "@fortawesome/free-solid-svg
 import {NavLink} from "react-router-dom";
 
 function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
   return (
       <footer className="footer">
           <img src={logo} className="App-logo" alt="logo"/>
           <nav>
               <ul className="menu">
-                  <li className={"menu-link"}>
+                  <li className={"menu-link"} onClick={scrollToTop}>
                       <NavLink className={({isActive}) => (isActive ? "link active" : "link")} to="/">Home</NavLink>
                   </li>
-                  <li className="menu-link">
+                  <li className="menu-link" onClick={scrollToTop}>
                       <NavLink className={({isActive}) => (isActive ? "link active" : "link")}
                                to="/about">About</NavLink>
                   </li>
-                  <li className="menu-link">
+                  <li className="menu-link" onClick={scrollToTop}>
                       <NavLink className={({isActive}) => (isActive ? "link active" : "link")}
                                to="/shop">Shop</NavLink>
                   </li>
-                  <li className="menu-link">
+                  <li className="menu-link" onClick={scrollToTop}>
                       <NavLink className={({isActive}) => (isActive ? "link active" : "link")}
                                to="/help">Help</NavLink>
                   </li>
