@@ -106,9 +106,6 @@ section.Home .General-slider .home-button .link {
         margin-right: 0;
         display: flex;
     }
-    section.Home .General-slider {
-        height: 100vh;
-    }
     section.Home .General-slider .welcome-text {
         bottom: 0;
         left: 5%!important;
