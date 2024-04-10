@@ -71,7 +71,7 @@ function Product({refreshComponent}:any) {
                         <div className="product-quantity-plus"></div>
                         <button className="product-button" onClick={() => addItem(product)}>
                             <FontAwesomeIcon icon={faCartShopping}/>
-                            <p className="text">Buy</p>
+                            <div className="text">Buy</div>
                         </button>
                     </div>
                 </div>
