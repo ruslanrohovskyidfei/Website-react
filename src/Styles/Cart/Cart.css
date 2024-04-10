@@ -1,6 +1,5 @@
 .cart-list {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -131,6 +130,9 @@
     }
 }
 @media (max-width: 450px) {
+    .cart-list {
+        flex-direction: column;
+    }
     .cart-item {
         width: 100%;
         margin-bottom: 10px;
