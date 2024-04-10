@@ -23,9 +23,6 @@ function App() {
     window.addEventListener("resize", handleResize);
     const [state, refreshState] = useState(0);
     const refresh: Function = () => refreshState(state + 1);
-    document.addEventListener('resize', function (e) {
-        document.body.style.overflow = "auto";
-    });
     return (
     <div className="App">
         <Header />

@@ -24,24 +24,26 @@ function Header() {
         const tag = e.target.tagName;
         const className = e.target.className;
         const keyCode = e.keyCode;
-        if(tag !== "UL") {
-            e.preventDefault();
-            if(className !== "search") {
-                setMenuMode(!menu)
+        if(window.innerWidth <= 992) {
+            if(tag !== "UL") {
+                e.preventDefault();
+                if(className !== "search") {
+                    setMenuMode(!menu)
+                }
+            } else {
+                if(className !== "search" && className !== "menu-search") {
+                    setMenuMode(!menu)
+                }
             }
-        } else {
-            if(className !== "search" && className !== "menu-search") {
-                setMenuMode(!menu)
+            if(menu === true) {
+                document.body.style.overflow = "auto";
+                scrollToTop();
+            } else {
+                document.body.style.overflow = "hidden";
             }
-        }
-        if(menu === true) {
-            document.body.style.overflow = "auto";
-            scrollToTop();
-        } else {
-            document.body.style.overflow = "hidden";
-        }
-        if(tag === "INPUT") {
-            document.body.style.overflow = "hidden";
+            if(tag === "INPUT") {
+                document.body.style.overflow = "hidden";
+            }
         }
     };
     return (
