@@ -29,6 +29,7 @@ body.showMenu {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  color: black;
 }
 .route-back-button div {
   margin-left: 10px
