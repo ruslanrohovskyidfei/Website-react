@@ -53,10 +53,16 @@
         width: 50%;
         margin-bottom: 15px;
     }
+    .product-item-title {
+         font-size: 22px;
+    }
 }
 @media (max-width: 450px) {
     .product-item {
         width: 100%;
         margin-bottom: 10px;
+    }
+    .product-item-title {
+        font-size: 20px;
     }
 }
