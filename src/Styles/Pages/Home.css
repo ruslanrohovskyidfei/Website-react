@@ -14,8 +14,8 @@ section.Home h1 {
 }
 section.Home .General-slider {
     width: 100%;
-    height: calc(100vh - 60px);
-    overflow-x: hidden;
+    height: calc(85vh - 60px);
+    overflow: hidden;
     position: relative;
 }
 section.Home .General-slider .slick-slider,

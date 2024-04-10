@@ -1,3 +1,6 @@
+* {
+  font-family: 'sans-serif', sans-serif;
+}
 body.showMenu {
   overflow: hidden;
 }
