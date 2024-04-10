@@ -14,6 +14,12 @@ function Header() {
     const [searchInput, setSearchInput] = useState("");
     const [menu, setMenuMode] = useState(false);
     const navigate = useNavigate();
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
     const SetMenu = (e: any) => {
         const tag = e.target.tagName;
         const className = e.target.className;
@@ -24,11 +30,17 @@ function Header() {
                 setMenuMode(!menu)
             }
         } else {
-            setMenuMode(!menu)
+            if(className !== "search" && className !== "menu-search") {
+                setMenuMode(!menu)
+            }
         }
         if(menu === true) {
             document.body.style.overflow = "auto";
+            scrollToTop();
         } else {
+            document.body.style.overflow = "hidden";
+        }
+        if(tag === "INPUT") {
             document.body.style.overflow = "hidden";
         }
     };
@@ -46,7 +58,7 @@ function Header() {
                 <ul className={"menu" + (menu === true ? " show" : "") }>
                     <li className="menu-search">
                         <p className="icon" onClick={() => navigate("/search/" + searchInput)}>
-                            <FontAwesomeIcon icon={faSearch}/>
+                            <FontAwesomeIcon icon={faSearch} onClick={(e) => scrollToTop()}/>
                         </p>
                         <input type="text" className="search" placeholder="Search"
                                onChange={(e) => setSearchInput(e.target.value)}
