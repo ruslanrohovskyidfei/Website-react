@@ -5,7 +5,7 @@ import ProductsSlider from "../Sections/ProductsSlider";
 import ProductsSpecs from "../Sections/ProductsSpecs";
 import Newsletter from "../Sections/Newsletter";
 import '../Styles/Product/ProductPage.css';
-import {faArrowLeft, faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft, faCartShopping, faMinus, faPlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import SingleSlider from "../Sections/SingleSlider";
 
@@ -13,6 +13,7 @@ function Product({refreshComponent}:any) {
     const productId = useParams().title
     const product = ProductsData.find(prod => prod.id === productId)
     const navigate = useNavigate();
+    const [ quantity, setQuantity ] = useState(1)
     let cartProduct = {};
     const addItem = (product: any) => {
         let quantityChange = false;
@@ -20,7 +21,7 @@ function Product({refreshComponent}:any) {
         let currentProduct: {} = ProductsData.filter(product => product.id === productId)[0];
         cartLocalStorage.map((item: any) => {
             if(productId === item.id) {
-                item.quantity += 1;
+                item.quantity = quantity;
                 quantityChange = true
             }
         });
@@ -28,11 +29,19 @@ function Product({refreshComponent}:any) {
             localStorage.setItem('cartItems', JSON.stringify([...cartLocalStorage]));
         } else {
             const { name, img, price, id } : any = currentProduct;
-            cartProduct = { id, name, img, price, quantity: 1 };
+            cartProduct = { id, name, img, price, quantity: quantity };
             localStorage.setItem('cartItems', JSON.stringify([cartProduct, ...cartLocalStorage]));
         }
         refreshComponent();
         navigate('/cart');
+    }
+    const quantityPlus = () => {
+        setQuantity(quantity + 1)
+    }
+    const quantityMinus = () => {
+        if(quantity > 1) {
+            setQuantity(quantity - 1)
+        }
     }
     const showBadges = () => {
         return (
@@ -68,11 +77,19 @@ function Product({refreshComponent}:any) {
                         <div className="product-description">{product?.description}</div>
                         <div className="product-quantity-minus"></div>
                         <div className="product-price">${product?.price}</div>
-                        <div className="product-quantity-plus"></div>
-                        <button className="product-button" onClick={() => addItem(product)}>
-                            <FontAwesomeIcon icon={faCartShopping}/>
-                            <div className="text">Buy</div>
-                        </button>
+                        <div className="product-button-wrapper">
+                            <button className="product-quantity-minus" onClick={quantityMinus}>
+                                <FontAwesomeIcon icon={faMinus}/>
+                            </button>
+                            <button className="product-button" onClick={() => addItem(product)}>
+                                <FontAwesomeIcon icon={faCartShopping}/>
+                                <div className="text">Buy</div>
+                                <span className="quantity-count">({quantity})</span>
+                            </button>
+                            <button className="product-quantity-plus" onClick={quantityPlus}>
+                                <FontAwesomeIcon icon={faPlus}/>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <ProductsSpecs/>

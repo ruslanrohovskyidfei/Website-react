@@ -15,6 +15,7 @@ section.newsletter .message {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9;
 }
 section.newsletter .newsletter-title {
     font-size: 20px;
@@ -54,6 +55,53 @@ section.newsletter .button-newletter-submit {
 section.newsletter .button-newletter-submit:hover {
     color: black;
     background: #61dafb;
+}
+section.newsletter .checkbox-container {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 5px;
+}
+
+section.newsletter .checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+section.newsletter .custom-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section.newsletter custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+}
+section.newsletter input[type='checkbox'] {
+    display: none;
+}
+
+section.newsletter input[type='checkbox']:checked + .custom-checkbox {
+    background-color: #2196f3;
+    border-color: #2196f3;
+}
+
+section.newsletter input[type='checkbox']:checked + .custom-checkbox:after {
+    content: '\2713';
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    top: 2px;
+    left: -20px;
 }
 @media (max-width: 768px) {
     section.newsletter .newsletter-title {

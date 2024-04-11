@@ -80,18 +80,60 @@
     font-size: 25px;
     margin: 10px 0;
 }
+.product .product-button-wrapper  {
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+}
+.product .product-button-wrapper .product-quantity-minus,
+.product .product-button-wrapper .product-quantity-plus {
+    background: black;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    height: 60px;
+}
+.product .product-button-wrapper .product-quantity-minus:hover,
+.product .product-button-wrapper .product-quantity-plus:hover {
+    color: #61dafb;
+    box-shadow: 0px 2px 60px #61dafb;
+}
+.product .product-button-wrapper .product-quantity-minus {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.product .product-button-wrapper .product-quantity-plus {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.product .product-button-wrapper .quantity-count {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 3px;
+    color: black;
+}
 .product .product-button {
-    margin-top: 20px;
     background: white;
     color: black;
+    height: 60px;
+    width: 100%;
     font-size: 20px;
-    padding: 15px 30px;
-    margin: 20px auto 0;
+    padding: 15px 20px;
+    margin: 0;
     border: none;
     outline: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
+    transition: 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +144,7 @@
 .product .product-button:hover {
     color: black;
     background-color: #61dafb;
+    box-shadow: 0px 2px 50px #61dafb;
 }
 /* Product Specs section */
 .product-specs {
@@ -152,7 +195,7 @@
 .slick-next {
     right: 5%;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
 
     .product {
         flex-direction: column;
@@ -169,8 +212,8 @@
         padding-top: 15%;
     }
     .product .product-content-wrapper .product-button {
-        width: 50%;
-        margin: 40px auto 0;
+        margin: 0 auto;
+        padding: 15px 20%;
     }
     .product-specs {
         max-width: 100%;

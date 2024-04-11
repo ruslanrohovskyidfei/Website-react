@@ -1,5 +1,5 @@
 section.Help {
-    font-size: 18px;
+    font-size: 20px;
 }
 section.Help .container {
     padding: 0 20px 40px;
@@ -10,4 +10,12 @@ section.Help h1 {
 }
 section.Help h2 {
     margin-top: 20px;
+}
+@media (max-width: 992px) {
+    section.Help h1 {
+        font-size: 23px;
+    }
+    section.Help h2 {
+        font-size: 20px;
+    }
 }
