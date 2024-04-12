@@ -21,6 +21,13 @@ section.About .wrapper .image img {
     height: 100%;
     transform: scale(1.7);
 }
+section.About .about-map {
+    border: none;
+    width: 100%;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
 @media (max-width: 992px) {
     section.About .wrapper {
         flex-direction: column-reverse;

@@ -40,6 +40,11 @@ function About() {
                   </div>
               </div>
           </div>
+          <iframe className="about-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4769.449359826954!2d-6.146724022660253!3d53.29446677860324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486706207cc0721f%3A0x7a327939a0446eb0!2sDun%20Laoghaire%20Further%20Education%20Institute!5e0!3m2!1sen!2sie!4v1712930790586!5m2!1sen!2sie"
+              width="600" height="450" loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade">
+          </iframe>
           <Newsletter/>
           <ProductsSlider/>
           <div className="Main-slider">
