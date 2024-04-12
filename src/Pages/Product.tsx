@@ -21,7 +21,7 @@ function Product({refreshComponent}:any) {
         let currentProduct: {} = ProductsData.filter(product => product.id === productId)[0];
         cartLocalStorage.map((item: any) => {
             if(productId === item.id) {
-                item.quantity = quantity;
+                item.quantity = item.quantity + quantity;
                 quantityChange = true
             }
         });
